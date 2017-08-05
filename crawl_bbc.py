@@ -16,7 +16,7 @@ share_string = ['شارك هذه الصفحة عبر', 'البريد الالك�
 
 def crawl_links(web_url, keyword, out_dir, stop=1000):
     print(web_url)
-    #sys.stdout.write("\rprint_links: {0}".format(len(crawled_links)))
+    sys.stdout.write("\rprint_links: {0}".format(len(crawled_links)))
     if len(crawled_links) > stop:
         return
     else:
