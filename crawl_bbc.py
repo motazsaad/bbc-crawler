@@ -15,7 +15,6 @@ share_string = ['شارك هذه الصفحة عبر', 'البريد الالك�
 
 
 def crawl_links(web_url, keyword, out_dir, stop=1000):
-    print(web_url)
     sys.stdout.write("\rprint_links: {0}".format(len(crawled_links)))
     if len(crawled_links) > stop:
         return
@@ -26,7 +25,6 @@ def crawl_links(web_url, keyword, out_dir, stop=1000):
         soup = BeautifulSoup(html_doc, 'html.parser')
         filename = web_url.split('/')[-1]
         filename = str(filename) + ".txt"
-        print(filename)
         file_writer = open(os.path.join(out_dir, filename), mode='w')
         file_writer.write(soup.title.string + '\n')
         file_writer.write(date + '\n')
