@@ -44,7 +44,6 @@ def crawl_links(web_url, keyword, out_dir, stop=1000):
                 if my_link.startswith(keyword):
                     target_link = "http://www.bbc.com" + my_link
                     if target_link not in crawled_links:
-                        print(target_link)
                         crawled_links.add(target_link)
                         crawl_links(target_link, keyword, out_dir)
         links = soup.find_all('a')
@@ -53,7 +52,6 @@ def crawl_links(web_url, keyword, out_dir, stop=1000):
             if my_link.startswith(keyword):
                 target_link = "http://www.bbc.com" + my_link
                 if target_link not in crawled_links:
-                    print(target_link)
                     crawled_links.add(target_link)
                     crawl_links(target_link, keyword, out_dir)
 
