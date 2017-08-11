@@ -14,8 +14,8 @@ share_string = ['شارك هذه الصفحة عبر', 'البريد الالك�
                 'None']
 
 
-def crawl_links(web_url, keyword, out_dir, stop=10):
-    sys.stdout.write("\rprint_links: {0}".format(len(crawled_links)))
+def crawl_links(web_url, keyword, out_dir, stop=10000):
+    sys.stdout.write("\rcrawled links: {0}".format(len(crawled_links)))
     if len(crawled_links) > stop:
         return
     else:
@@ -59,13 +59,23 @@ if __name__ == '__main__':
         'http://www.bbc.com/arabic/world',
         'http://www.bbc.com/arabic/middleeast',
         'http://www.bbc.com/arabic/business',
-        'http://www.bbc.com/arabic/sports'
+        'http://www.bbc.com/arabic/sports',
+        'http://www.bbc.com/arabic/inthepress',
+        'http://www.bbc.com/arabic/scienceandtech',
+        'http://www.bbc.com/arabic/artandculture',
+        'http://www.bbc.com/arabic/magazine',
+        'http://www.bbc.com/arabic/indepth'
     ]
     keywords = [
         '/arabic/world',
         '/arabic/middleeast',
         '/arabic/business',
-        '/arabic/sports'
+        '/arabic/sports',
+        '/arabic/inthepress',
+        '/arabic/scienceandtech',
+        '/arabic/artandculture',
+        '/arabic/magazine',
+        '/arabic/indepth'
     ]
     if not os.path.exists('out'):
         os.mkdir('out')
